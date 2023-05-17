@@ -1,1 +1,3 @@
-Sample Message
+Message Template for Test
+
+{{ $name }}

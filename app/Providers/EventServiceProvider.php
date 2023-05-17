@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\SampleEvent;
+use App\Listeners\SampleListener;
+use App\Listeners\DataDumpListener;
+use App\Listeners\GeneratePDFListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +22,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+
+        SampleEvent::class => [
+          //  SampleListener::class,
+       //     DataDumpListener::class,
+            GeneratePDFListener::class
+        ]
     ];
 
     /**

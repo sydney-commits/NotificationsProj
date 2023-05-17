@@ -13,16 +13,17 @@ class SampleMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
-    public function __construct()
+    public $name;
+    public function __construct($name)
     {
-        //
+        $this->name = $name;
     }
 
 public function build(){
     return $this->subject('Outro ...')
-    ->view('emails.auth');
+    ->view('emails.auth')
+    ->with([
+        'name' => $this->name,
+    ]);
 }
 }
