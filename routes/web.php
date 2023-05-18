@@ -17,6 +17,9 @@ Route::get('/sendMailEvent',[SampleController::class, 'sendMailEvent']);
 Route::get('/generatePDF',[SampleController::class, 'generatePDF']);
 
 
+Route::get('/SaveData',[SampleController::class, 'SaveData']);
+
+
 
 
 

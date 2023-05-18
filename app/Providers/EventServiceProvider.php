@@ -25,8 +25,8 @@ class EventServiceProvider extends ServiceProvider
 
         SampleEvent::class => [
           //  SampleListener::class,
-       //     DataDumpListener::class,
-            GeneratePDFListener::class
+            DataDumpListener::class,
+        //    GeneratePDFListener::class
         ]
     ];
 

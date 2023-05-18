@@ -8,6 +8,7 @@ use App\Mail\SampleMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Jobs\SendAuthMail;
+use App\Models\Sample;
 use PDF;
 
 
@@ -53,5 +54,19 @@ class SampleController extends Controller
  //  return response()->download($pathToFile, $name, $headers);
         //return $pdf->stream();
         //return $pdf->download('file1.pdf');
+    }
+
+    public function SaveData(Request $request){
+
+        $x = new Sample;
+
+        $x->name = 'Sydney';
+        $x->gender = 'Male';
+        $x->age = '12';
+
+        $x->save();
+
+        return 'Saved';
+
     }
 }
